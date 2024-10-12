@@ -14,8 +14,8 @@ public interface AnimalRepository extends JpaRepository<Animal, Integer> {
     @Query(value = "SELECT * FROM animals WHERE species LIKE %?%;", nativeQuery = true)
     List<Animal> getAnimalSearch(String searchStr);
 
-    @Query(value = "DELETE FROM animals WHERE animal_id = ?;", nativeQuery = true)
-    void deleteAnimalById(int animalId);
+    //@Query(value = "DELETE FROM animals WHERE animal_id = ?;", nativeQuery = true)
+    //void deleteAnimalById(int animalId);
 
 
 

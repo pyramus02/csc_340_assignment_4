@@ -32,7 +32,7 @@ public class AnimalService {
     }
 
     /**
-     * Fetch all animals whose major matches the search term.
+     * Fetch all animals whose species matches the search term.
      *
      * @param species the search key.
      * @return the list of matching Animals.
@@ -40,6 +40,13 @@ public class AnimalService {
     public List<Animal> getAnimalsBySpecies(String species) {
         return animalRepository.getAnimalsBySpecies(species);
     }
+
+
+    /**
+     * Wildcard species search - arg of bear might return both brown bear and black bear for example
+     * @param searchStr
+     * @return
+     */
 
 
     public List<Animal> getAnimalSearch(String searchStr) { return animalRepository.getAnimalSearch(searchStr);}
@@ -51,13 +58,12 @@ public class AnimalService {
      */
     public void addNewAnimal(Animal animal) {
 
-        System.out.println("Adding Animal:" + animal.getName());
 
         animalRepository.save(animal);
     }
 
     /**
-     * Update an existing Student.
+     * Update an existing Animal
      *
      * @param animalId the unique Animal Id.
      * @param animal  the new Animal details.
@@ -72,7 +78,7 @@ public class AnimalService {
 
 
     /**
-     * Delete a unique .
+     * Delete a unique animal.
      *
      * @param animalId the unique Animal Id.
      */

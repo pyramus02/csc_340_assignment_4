@@ -27,7 +27,6 @@ public class Animal {
 
     public Animal(String name, String scientificName, String species, String habitat, String description) {
 
-        System.out.println("Constructing an Animal!");
 
         this.name = name;
         this.scientificName = scientificName;
@@ -38,8 +37,6 @@ public class Animal {
 
     public Animal(String name, String species, String habitat) {
 
-        System.out.println("Constructing an Animal!");
-
         this.name = name;
         this.scientificName = null;
         this.species = species;
@@ -47,11 +44,7 @@ public class Animal {
         this.description = null;
     }
 
-    public Animal() {
-
-        System.out.println("Constructing an Animal!");
-
-    }
+    public Animal() {}
 
 
 

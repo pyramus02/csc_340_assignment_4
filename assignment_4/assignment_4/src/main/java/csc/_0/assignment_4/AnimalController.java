@@ -39,13 +39,26 @@ public class AnimalController {
 
      *
      * @param species the search key.
-     * @return A list of Student objects matching the search key.
+     * @return A list of Animal objects matching the search key.
      */
     @GetMapping("")
     public List<Animal> getAnimalsBySpecies(@RequestParam(name = "species", defaultValue = "gray wolf") String species) {
         return service.getAnimalsBySpecies(species);
     }
 
+
+    /**
+     *
+     *
+     * Wildcard species search
+     *
+     * http://localhost:8080/animals/find?find=bear
+     *
+     * would return both black bear and polar bear.
+     *
+     * @param searchStr
+     * @return
+     */
 
     @GetMapping("/find")
     public List<Animal> getAnimalsSearch(@RequestParam(name = "find", defaultValue = "gray wolf") String searchStr) {
@@ -64,16 +77,6 @@ public class AnimalController {
     @PostMapping("/new")
     public @ResponseBody List<Animal> addNewAnimal(@RequestBody Animal animal) {
         service.addNewAnimal(animal);
-        return service.getAllAnimals();
-    }
-
-    @PostMapping("/newer")
-    public @ResponseBody List<Animal> addNewerAnimal() {
-
-        Animal luna = new Animal("Luna", "Canis Lupis", "Gray Wolf, ",
-                "Forest", "Very playful young female");
-
-        service.addNewAnimal(luna);
         return service.getAllAnimals();
     }
 
