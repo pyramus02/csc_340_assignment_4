@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Animal Details</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-color: #6f42c1;">
+<a class="nav-link active" aria-current="page" href="/animals/all">Home</a>
+<div class="container">
+  <table class="table" style="color: gold;">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Scientific Name</th>
+      <th>Species</th>
+      <th>Habitat</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        <a data-th-href="@{/animals/{animalId} (animalId=${animal.animalId})}" data-th-text="${animal.animalId}"></a>
+      </td>
+      <td data-th-text="${animal.name}"></td>
+      <td data-th-text="${animal.scientificName}"></td>
+      <td data-th-text="${animal.species}"></td>
+      <td data-th-text="${animal.habitat}"></td>
+      <td data-th-text="${animal.description}"></td>
+    </tr>
+    </tbody>
+  </table>
+  <a data-th-href="@{/animals/update/{animalId}(animalId=${animal.animalId})}" class="btn btn-primary">Edit</a>
+  <a data-th-href="@{/animals/delete/{animalId}(animalId=${animal.animalId})}" class="btn btn-danger">Delete</a>
+</div>
+</body>
+</html>

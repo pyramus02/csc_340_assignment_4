@@ -10,7 +10,7 @@ public class Animal {
     private int animalId;
 
     @Column(nullable = false)
-    private String name;
+    public String name;
 
     @Column(nullable = true)
     private String scientificName;
@@ -25,9 +25,8 @@ public class Animal {
     private String description;
 
 
-    public Animal(String name, String scientificName, String species, String habitat, String description) {
-
-
+    public Animal(String name, String scientificName, String species, String habitat, String description)
+    {
         this.name = name;
         this.scientificName = scientificName;
         this.species = species;
@@ -35,27 +34,13 @@ public class Animal {
         this.description = description;
     }
 
-    public Animal(String name, String species, String habitat) {
-
-        this.name = name;
-        this.scientificName = null;
-        this.species = species;
-        this.habitat = habitat;
-        this.description = null;
-    }
-
     public Animal() {}
-
-
-
 
     public int getAnimalId() {
         return this.animalId;
     }
 
-    public void setAnimalId(int animalId) {
-        this.animalId = animalId;
-    }
+    public void setAnimalId(int animalId) {this.animalId = animalId;}
 
     public String getName() {
         return this.name;
@@ -65,15 +50,11 @@ public class Animal {
         this.name = name;
     }
 
-
     public String getScientificName() {
         return this.scientificName;
     }
 
-    public void setScientificName(String scientificName) {
-        this.scientificName = scientificName;
-    }
-
+    public void setScientificName(String scientificName) {this.scientificName = scientificName;}
 
     public String getSpecies() {
         return this.species;
@@ -83,7 +64,6 @@ public class Animal {
         this.species = species;
     }
 
-
     public String getHabitat() {
         return this.habitat;
     }
@@ -92,26 +72,19 @@ public class Animal {
         this.habitat = habitat;
     }
 
-
     public String getDescription() {
         return this.description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+    public void setDescription(String description) {this.description = description;}
 
-
-
-    public void setAnimal(Animal newAnimal) {
-
+    public void setAnimal(Animal newAnimal)
+    {
         this.name = newAnimal.getName();
         this.scientificName = newAnimal.getScientificName();
         this.species = newAnimal.getSpecies();
         this.habitat = newAnimal.getHabitat();
         this.description = newAnimal.getDescription();
-
-
     }
 }
 

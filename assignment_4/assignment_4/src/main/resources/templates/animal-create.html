@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>animal-create</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-color: #6f42c1">
+
+<a class="nav-link active" aria-current="page" href="/animals/all">Home</a>
+
+<div>
+  <h1>Create Animal</h1>
+</div>
+
+
+
+<form action="/animals/novelty" method="post">
+  <div class="form-group" style="color: gold;">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name="name" style="background-color: gold">
+  </div>
+
+  <div class="form-group" style="color: gold;">
+    <label for="scientificName">Scientific Name</label>
+    <input type="text" class="form-control" id="scientificName" name="scientificName" style="background-color: gold">
+  </div>
+
+  <div class="form-group" style="color: gold;">
+    <label for="species">Species</label>
+    <input type="text" class="form-control" id="species" name="species" style="background-color: gold">
+  </div>
+
+  <div class="form-group" style="color: gold;">
+    <label for="habitat">Habitat</label>
+    <input type="text" class="form-control" id="habitat" name="habitat" style="background-color: gold">
+  </div>
+
+  <div class="form-group" style="color: gold;">
+    <label for="description">Description</label>
+    <textarea class="form-control" id="description" name="description" rows="5" style="background-color: gold"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-success">Create</button>
+</form>
+
+</body>
+</html>

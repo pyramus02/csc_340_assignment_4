@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Animal List</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-color: #6f42c1;">
+<!-- Navigation -->
+<nav>
+    <a class="nav-link active" aria-current="page" href="/animals/all">Home</a>
+</nav>
+
+<div class="container">
+    <!-- Animal Table -->
+    <table class="table" style="color: gold;">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Scientific Name</th>
+            <th>Species</th>
+            <th>Habitat</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr data-th-each="animal : ${animalList}">
+            <td>
+                <a data-th-href="@{/animals/{animalId}(animalId=${animal.animalId})}" data-th-text="${animal.animalId}"></a>
+            </td>
+            <td data-th-text="${animal.name}"></td>
+            <td data-th-text="${animal.scientificName}"></td>
+            <td data-th-text="${animal.species}"></td>
+            <td data-th-text="${animal.habitat}"></td>
+            <td data-th-text="${animal.description}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- Add New Animal Button -->
+    <a href="/animals/new" class="btn btn-success">Add New</a>
+
+    <!-- Search Form -->
+    <form action="/animals/name" method="get" class="mt-3">
+        <div class="form-group" style="color: gold;">
+            <label for="name">Search by Name</label>
+            <input type="text" class="form-control" id="name" name="searchStr" style="background-color: gold;">
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+
+    <form action="/animals/species" method="get" class="mt-3">
+        <div class="form-group" style="color: gold;">
+            <label for="species">Query by Species</label>
+            <input type="text" class="form-control" id="species" name="speciesStr" style="background-color: gold;">
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>
+</body>
+</html>

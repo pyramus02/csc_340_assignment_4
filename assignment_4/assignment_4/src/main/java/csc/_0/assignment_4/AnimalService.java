@@ -1,16 +1,14 @@
 package csc._0.assignment_4;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-
 
 @Service
 public class AnimalService {
 
     @Autowired
     private AnimalRepository animalRepository;
-
 
     /**
      * Fetch all Animals
@@ -41,15 +39,15 @@ public class AnimalService {
         return animalRepository.getAnimalsBySpecies(species);
     }
 
-
     /**
-     * Wildcard species search - arg of bear might return both brown bear and black bear for example
+     * Wildcard species search - arg of bear might return both brown bear and black bear, for example.
+     *
      * @param searchStr
      * @return
      */
-
-
-    public List<Animal> getAnimalSearch(String searchStr) { return animalRepository.getAnimalSearch(searchStr);}
+    public List<Animal> getAnimalSearch(String searchStr) {
+        return animalRepository.getAnimalSearch(searchStr);
+    }
 
     /**
      * Add a new Animal to the database.
@@ -57,8 +55,6 @@ public class AnimalService {
      * @param animal the new Animal to add.
      */
     public void addNewAnimal(Animal animal) {
-
-
         animalRepository.save(animal);
     }
 
@@ -66,16 +62,14 @@ public class AnimalService {
      * Update an existing Animal
      *
      * @param animalId the unique Animal Id.
-     * @param animal  the new Animal details.
+     * @param animal   the new Animal details.
      */
     public void updateAnimal(int animalId, Animal animal) {
-
         Animal existing = getAnimalById(animalId);
+
         existing.setAnimal(animal);
         animalRepository.save(existing);
     }
-
-
 
     /**
      * Delete a unique animal.

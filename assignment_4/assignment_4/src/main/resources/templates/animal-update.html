@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>animal-update</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-color: #6f42c1">
+
+<nav>
+  <a class="nav-link active" aria-current="page" href="/animals/all">Home</a>
+</nav>
+
+<form action="/animals/mutate" method="post">
+
+  <input type="hidden" name="animalId" data-th-value="${animal.animalId}">
+
+  <div class="form-group" style="color: gold;">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name="name" data-th-value="${animal.name}" style="background-color: gold">
+  </div>
+
+  <div class="form-group" style="color: gold;">
+    <label for="scientificName">Scientific Name</label>
+    <input type="text" class="form-control" id="scientificName" name="scientificName" data-th-value="${animal.scientificName}" style="background-color: gold">
+  </div>
+
+  <div class="form-group" style="color: gold;">
+    <label for="species">Species</label>
+    <input type="text" class="form-control" id="species" name="species" data-th-value="${animal.species}" style="background-color: gold">
+  </div>
+
+  <div class="form-group" style="color: gold;">
+    <label for="habitat">Habitat</label>
+    <input type="text" class="form-control" id="habitat" name="habitat" data-th-value="${animal.habitat}" style="background-color: gold">
+  </div>
+
+  <div class="form-group" style="color: gold;">
+    <label for="description">Description</label>
+    <textarea class="form-control" id="description" name="description" rows="5" style="background-color: gold" data-th-text="${animal.description}"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-success">Update</button>
+</form>
+
+</body>
+</html>
